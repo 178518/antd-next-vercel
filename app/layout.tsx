@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import React from 'react';
 import { Inter } from 'next/font/google';
 import { ConfigProvider } from 'antd';
+import zhCN from 'antd/locale/zh_CN';
+import 'dayjs/locale/zh-cn';
 import theme from './themeConfig';
 
 import StyledComponentsRegistry from './AntdRegistry';
@@ -33,7 +35,9 @@ export default function RootLayout({
     <html lang="zh_CN">
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          <ConfigProvider theme={theme}>{children}</ConfigProvider>
+          <ConfigProvider theme={theme} locale={zhCN}>
+            {children}
+          </ConfigProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
