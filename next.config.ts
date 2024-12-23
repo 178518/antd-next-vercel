@@ -3,7 +3,7 @@ import type { NextConfig } from 'next';
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
-  distDir: 'dist', // 自定义构建目录
+  // distDir: 'dist', // 自定义构建目录
   compress: true, // 启用 gzip 压缩
   reactStrictMode: true, // 启用 React 严格模式
   experimental: {},
