@@ -1,24 +1,8 @@
 'use client'; // 错误边界必须是客户端组件
 
-import { useEffect } from 'react';
+import React from 'react';
+import { Button, Result } from 'antd';
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
-  useEffect(() => {
-    // 将错误记录到错误报告服务
-    console.error(error);
-  }, [error]);
-
-  return (
-    <div>
-      <h2>出错了！</h2>
-      <button
-        onClick={
-          // 尝试通过重新渲染段来恢复
-          () => reset()
-        }
-      >
-        重试
-      </button>
-    </div>
-  );
+  return <Result status="500" title="500" subTitle={error.message} extra={<Button href="/">回到首页</Button>} />;
 }

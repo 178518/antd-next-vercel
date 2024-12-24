@@ -4,8 +4,18 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button, DatePicker, Form, InputNumber, Select, Slider, Switch } from 'antd';
+import dayjs from 'dayjs';
 
 const HomePage: React.FC = () => {
+  // 表单的初始值
+  const initialValues = {
+    inputNumber: 3,
+    switch: true,
+    slider: 70,
+    select: 'lucy',
+    datePicker: dayjs('2024-12-24')
+  };
+
   const onFinish = (values: any) => {
     console.log('Success:', values);
   };
@@ -24,24 +34,24 @@ const HomePage: React.FC = () => {
         <Form
           name="basic"
           layout="horizontal"
+          initialValues={initialValues}
           size={'large'}
           labelCol={{ span: 8 }}
           wrapperCol={{ span: 8 }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >
-          <Form.Item label="Input Number">
-            <InputNumber min={1} max={10} style={{ width: 100 }} defaultValue={3} name="inputNumber" />
+          <Form.Item label="Input Number" name="inputNumber">
+            <InputNumber min={1} max={10} style={{ width: 100 }} name="inputNumber" />
           </Form.Item>
-          <Form.Item label="Switch">
-            <Switch defaultChecked />
+          <Form.Item label="Switch" name="switch">
+            <Switch />
           </Form.Item>
-          <Form.Item label="Slider">
-            <Slider defaultValue={70} />
+          <Form.Item label="Slider" name="slider">
+            <Slider />
           </Form.Item>
           <Form.Item label="Select" name="select">
             <Select
-              defaultValue="lucy"
               style={{ width: 192 }}
               options={[
                 { value: 'jack', label: 'Jack' },

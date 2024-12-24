@@ -2,4 +2,6 @@
  yarn 
  pnpm i
 
- npm run dev
+ bun run dev
+
+ - [Next.js 中文文档](https://nextjscn.org/)
