@@ -6,16 +6,18 @@
 import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-function New() {
+const New = () => {
   const searchParams = useSearchParams();
 
   return <Suspense>Search: {searchParams.get('id')}</Suspense>;
-}
+};
 
-export default function Page() {
+const News = () => {
   return (
     <Suspense>
       <New />
     </Suspense>
   );
-}
+};
+
+export default News;

@@ -30,6 +30,18 @@ const HomePage: React.FC = () => {
       <Link href="http://mchz.com.cn/" target="_blank">
         杭州美创科技
       </Link>
+      <ul>
+        <li>
+          <Link href="/news?id=1" target="_blank">
+            news
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog/1/2/3?userName=leihang" target="_blank">
+            blog
+          </Link>
+        </li>
+      </ul>
       <div>
         <Form
           name="basic"
