@@ -41,6 +41,11 @@ const HomePage: React.FC = () => {
             blog
           </Link>
         </li>
+        <li>
+          <Link href="/dashboard" target="_blank">
+            dashboard
+          </Link>
+        </li>
       </ul>
       <div>
         <Form
